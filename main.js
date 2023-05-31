@@ -217,9 +217,7 @@ function showMessage() {
 var showMessage2 = function testName() {
     console.log('Expression function')
 }
-setTimeout(function autoLogin() {
-
-})
+// setTimeout(function autoLogin() {})
 var myObject = {
     myFunction: function tenChoDeHieu() {
 
@@ -797,3 +795,380 @@ var htmls = flatArray.map(function (course) {
 </div>`;
 })
 console.log(htmls.join(''));
+
+var watchList = [{
+    "Title": "Inception",
+    "Year": "2010",
+    "Rated": "PG-13",
+    "Released": "16 Jul 2010",
+    "Runtime": "148 min",
+    "Genre": "Action, Adventure, Crime",
+    "Director": "Christopher Nolan",
+    "Writer": "Christopher Nolan",
+    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
+    "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+    "Language": "English, Japanese, French",
+    "Country": "USA, UK",
+    "imdbRating": "8.8",
+    "imdbVotes": "1,446,708",
+    "imdbID": "tt1375666",
+    "Type": "movie",
+}, {
+    "Title": "Interstellar",
+    "Year": "2014",
+    "Rated": "PG-13",
+    "Released": "07 Nov 2014",
+    "Runtime": "169 min",
+    "Genre": "Adventure, Drama, Sci-Fi",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan, Christopher Nolan",
+    "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
+    "Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "Language": "English",
+    "Country": "USA, UK",
+    "imdbRating": "8.6",
+    "imdbVotes": "910,366",
+    "imdbID": "tt0816692",
+    "Type": "movie",
+}, {
+    "Title": "The Dark Knight",
+    "Year": "2008",
+    "Rated": "PG-13",
+    "Released": "18 Jul 2008",
+    "Runtime": "152 min",
+    "Genre": "Action, Adventure, Crime",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
+    "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
+    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "Language": "English, Mandarin",
+    "Country": "USA, UK",
+    "imdbRating": "9.0",
+    "imdbVotes": "1,652,832",
+    "imdbID": "tt0468569",
+    "Type": "movie",
+}, {
+    "Title": "Batman Begins",
+    "Year": "2005",
+    "Rated": "PG-13",
+    "Released": "15 Jun 2005",
+    "Runtime": "140 min",
+    "Genre": "Action, Adventure",
+    "Director": "Christopher Nolan",
+    "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
+    "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
+    "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+    "Language": "English, Urdu, Mandarin",
+    "Country": "USA, UK",
+    "imdbRating": "8.3",
+    "imdbVotes": "972,584",
+    "imdbID": "tt0372784",
+    "Type": "movie",
+}, {
+    "Title": "Avatar",
+    "Year": "2009",
+    "Rated": "PG-13",
+    "Released": "18 Dec 2009",
+    "Runtime": "162 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "James Cameron",
+    "Writer": "James Cameron",
+    "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "Language": "English, Spanish",
+    "Country": "USA, UK",
+    "imdbRating": "7.9",
+    "imdbVotes": "876,575",
+    "imdbID": "tt0499549",
+    "Type": "movie",
+}];
+
+var filmChristopher = watchList.filter(function (film) {
+    return film.Director === "Christopher Nolan";
+});
+
+
+function calculateRating(array) {
+    var total = array.reduce(function (temp, film) {
+        return temp + Number(film.imdbRating);
+    }, 0);
+    var average = total / array.length;
+    return average;
+}
+
+console.log(calculateRating(filmChristopher));
+
+
+// Array.prototype.myReduce = function (callback, result) {
+//     let i = 0;
+//     if (undefined === result) {
+//         result = this[0];
+//         i = 1;
+//     }
+//     for (; i < this.length; i++) {
+//         result = callback(result, this[i], i, this)
+//
+//     }
+//
+//     return result;
+// }
+// const numbers = [1, 2, 3, 4, 5];
+// const result1 = numbers.myReduce((total, number) => total + number);
+//
+//
+// console.log(result1);
+
+
+function arrToObj(arr) {
+    var obj = {};
+    for (var item in arr) {
+        console.log(arr[item][0])
+        obj[arr[item][0]] = arr[item][1];
+    }
+
+    return obj;
+}
+
+function arrToObj1(array) {
+    return array.reduce(function (temp, array1) {
+        temp[array1[0]] = array1[1].toString();
+        return temp;
+    }, {});
+}
+
+// Expected results:
+var arr = [['name', 'Sơn Đặng'], ['age', 18]];
+console.log(arrToObj1(arr)); // { name: 'Sơn Đặng', age: 18 }
+
+
+//inclues
+var title = 'Responsive web sesign';
+console.log(title.includes('Responsive'));
+
+var courses = ['Javascript', 'PHP', 'Dart'];
+console.log(courses.includes('Javascript'));
+
+//call back
+
+function myFunction1(param) {
+    if (typeof param === 'function') param(123);
+}
+
+function myCallBack(value) {
+    console.log('Value: ', value);
+}
+
+myFunction1(myCallBack);
+
+var courses = ['Javascript', 'PHP', 'Ruby'];
+Array.prototype.map2 = function (callback, index) {
+    var output = [];
+    var arrayLength = this.length;
+    for (var i = 0; i < arrayLength; i++) {
+        output.push(callback(this[i], index))
+    }
+
+    return output;
+}
+var htmls = courses.map2(function (course, index) {
+    return `<h2>${course}</h2>`;
+});
+console.log(htmls)
+
+
+console.log("============")
+// Expected results
+const numbers = [1, 2, 3];
+
+Array.prototype.myMap1 = function (callback) {
+    var output = [];
+
+    var length = this.length;
+    for (var i = 0; i < length; i++) {
+        output.push(callback(this[i], i));
+    }
+    return output;
+}
+
+var newArray = numbers.myMap1(function (number) {
+    return number * 2;
+})
+
+console.log(newArray);
+
+
+console.log(numbers.myMap1(function (number, index) {
+    return number * index;
+})) // Output: [0, 2, 6]
+
+console.log("===================")
+
+
+numbers.forEach(function (number, index) {
+    console.log("Foreach", index, number);
+})
+
+Array.prototype.forEach2 = function (functionCallBack) {
+    var length = this.length;
+    for (var key in this) {
+        if (this.hasOwnProperty(key)) functionCallBack(this[key], key, this);
+    }
+}
+
+numbers.forEach2(function (number, index) {
+    console.log("Foreach2 ", index, number);
+})
+console.log("===================")
+
+//reduce
+console.log("Reduce ", numbers.reduce(function (temp, number) {
+    return temp + number;
+}))
+
+Array.prototype.reduce2 = function (callbackFunction, initValue) {
+    var i = 0;
+    if (initValue === undefined) {
+        i = 1;
+        initValue = this[0];
+    }
+    var length = this.length;
+    for (; i < length; i++) {
+        initValue = callbackFunction(initValue, this[i]);
+    }
+    return initValue;
+}
+console.log("Reduce2 ", numbers.reduce2(function (temp, number) {
+    return temp + number;
+}))
+
+
+console.log("===========")
+
+var courses = [{
+    id: 1, name: 'Javascript', coin: 3
+}, {
+    id: 2, name: 'ReactJS', coin: 4
+}, {
+    id: 3, name: 'Java', coin: 0
+}, {
+    id: 4, name: 'HTML & CSS', coin: 0
+}];
+
+console.log("Find", courses.find(function (course) {
+    return course.coin === 0;
+}))
+
+Array.prototype.find2 = function (cb) {
+    var length = this.length;
+    for (var i = 0; i < length; i++) {
+        if (cb(this[i])) return this[i];
+    }
+    return undefined;
+}
+console.log("Find2", courses.find2(function (course) {
+    return course.coin === 0;
+}))
+
+console.log("===========Filter");
+console.log(courses.filter(function (course, index) {
+    return course.coin === 0;
+}))
+
+Array.prototype.filter2 = function (cb) {
+    var output = [];
+    for (var i in this) {
+        if (this.hasOwnProperty(i)) if (cb(this[i], i, this)) output.push(this[i]);
+    }
+    return output;
+}
+console.log("Filter 2", courses.filter2(function (course, index) {
+    return course.coin === 0;
+}))
+
+Array.prototype.myMap = function (cb) {
+
+}
+
+// Expected results
+Array.prototype.myMap = function (cb) {
+    var length = this.length;
+    var output = [];
+    for (var i = 0; i < length; i++) {
+        output.push(cb(this[i], i));
+    }
+    return output;
+};
+
+console.log(numbers.myMap(function (number) {
+    return number * 2;
+})) // Output: [2, 4, 6]
+
+console.log(numbers.myMap(function (number, index) {
+    return number * index;
+})) // Output: [0, 2, 6]
+
+
+var courses = [{
+    id: 1, name: 'Javascript', coin: 4
+}, {
+    id: 2, name: 'ReactJS', coin: 3
+}, {
+    id: 3, name: 'Java', coin: 7,
+}, {
+    id: 4, name: 'HTML & CSS', coin: 0
+}];
+// some
+console.log(courses.some(function (value, index, originalArray) {
+    return value.coin === 7;
+}))
+
+Array.prototype.some2 = function (cb) {
+    for (var i in this) {
+        if (this.hasOwnProperty(i)) if (cb(this[i], i, this)) return true;
+    }
+    return false;
+}
+
+console.log(courses.some2(function (value, index, originalArray) {
+    return value.coin === 0;
+}))
+//every
+console.log("=======Every")
+console.log(courses.every(function (course, index, originArray) {
+    return course.coin >= 1;
+}))
+
+Array.prototype.every2 = function (cb) {
+    for (var i in this) {
+        if (this.hasOwnProperty(i))
+        if (!cb(this[i], i, this)) return false;
+    }
+    return true;
+}
+console.log(courses.every2(function (course, index, originArray) {
+    return course.coin >= 1;
+}))
+
+
+console.log("=========")
+const numbers2 = [1, 2, 3, 4];
+Array.prototype.myFilter = function (cb) {
+    var output = [];
+    for (var i in this) {
+        if (this.hasOwnProperty(i)) if (cb(this[i], i, this)) {
+            output.push(this[i]);
+        }
+    }
+    return output;
+}
+console.log(numbers2.myFilter(function (number) {
+    return number % 2 === 0;
+}));
+console.log(numbers2.myFilter(function (number, index) {
+    return index % 2 === 0;
+}));
+
+console.log(numbers2.myFilter(function (number, index, array) {
+    return array.length % 2 === 0;
+}));
+
