@@ -230,3 +230,4 @@ btn.addEventListener('click',viec2);
 setTimeout(function (){
     btn.removeEventListener('click',viec1);
 },3000)
+
