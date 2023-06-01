@@ -421,6 +421,7 @@ var user = new User('Khanh', 'Nguyen', 'Avatar');
 
 
 console.log(author);
+
 console.log(User === author.constructor)
 console.log(typeof author)
 console.log(user);

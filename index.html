@@ -4,10 +4,133 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
+<style>
+    .white {
+        color: white;
+    }
+
+    ul {
+        display: none;
+    }
+
+    input:focus ~ ul {
+        display: block;
+    }
+</style>
 <body>
 
-<h1>Javascript basic 2</h1>
-<!--<script src="./main.js"></script> nhu nhau-->
-<script src="main.js"></script>
+<div>
+    DIV
+
+    <button>Click me</button>
+</div>
+<input placeholder="Tim kiem">
+<ul>
+    <li>Javascript</li>
+    <li>PHP</li>
+    <li>Golang</li>
+</ul>
+<br/>
+<a href="https://google.com.vn">Google</a>
+<a href="https://youtube.com.vn">Youtube</a>
+<!--DOM events-->
+<input type="text">
+<input type="checkbox">
+<select>
+    <option value="value1">1</option>
+    <option value="value2">2</option>
+    <option value="value3">3</option>
+</select>
+
+
+<!--Attribute events-->
+<h1 onclick="console.log(this.innerText)">
+    <span onclick="console.log('Child')">DOM events</span></h1>
+<h1>
+    <span>DOM events 2</span></h1>
+<h1>
+    <span>DOM event 3</span></h1>
+<a></a>
+<h1 id="heading" class="heading">Javascript basic 2
+
+    <span style="display: none">Text</span>
+    <span>Heading</span>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+
+</h1>
+<h1 class="heading" draggable="true">Javascript basic 3</h1>
+<h1 class="heading">Javascript basic 4</h1>
+<p>Hello guys</p>
+<div class="boxes">
+    <div class="box">
+        <h2 class="heading-2">Heading 2 - 1</h2>
+        <h2 class="heading-2">Heading 2 - 2</h2>
+        <h2 class="heading-2">Heading 2 - 3</h2>
+    </div>
+
+    <div class="box box-2 box-3   box-3" contenteditable="true" autofocus>
+        <h2 class="heading-3" title="Heading 2-2-1">Heading 2 - 2 -1</h2>
+        <h2 class="heading-2">Heading 2 - 2 -2</h2>
+        <h2 class="heading-2">Heading 2 - 2- 3</h2>
+        <h2 class="heading-2">Heading 2 - 2- 3</h2>
+    </div>
+</div>
+<form id="form-1"></form>
+<form id="form-2"></form>
+<form id="form-3"></form>
+<form id="testForm"></form>
+
+<a href="" name="youtube">Youtube</a>
+<a href="" name="facebook">Facebook</a>
+
+<div class="box-1">
+    <ul>
+        <li>
+            Javascript 1
+        </li>
+        <li>PHP1</li>
+
+        <p>Test paragraph</p>
+    </ul>
+</div>
+
+<div class="box-2">
+    <ul>
+        <li>
+            Javascript 2
+        </li>
+        <li>PHP2</li>
+    </ul>
+</div>
+
+<div class="products-list">
+    <div class="product">
+        <h3 class="title">Khóa học HTML & CSS Pro</h3>
+        <p class="description">Cung cấp kiến thức từ cơ bản đến nâng cao về HTML & CSS</p>
+        <button class="cta-btn">Mua ngay</button>
+        <div>
+            <div class="product">
+                <h3 class="title">Khóa học Javascript Pro</h3>
+                <p class="description">Cung cấp kiến thức từ cơ bản đến nâng cao về Javascript</p>
+                <button class="cta-btn">Mua ngay</button>
+                <div>
+                </div>
+
+
+                <!--<script src="./main.js"></script> nhu nhau-->
+                <!--<script src="main.js"></script>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="domJS.js"></script>
 </body>
 </html>
